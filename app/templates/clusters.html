@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Hasil Clustering</h2>
+
+<p>Distribusi jumlah berita per cluster.</p>
+
+<canvas id="clusterBarChart" width="400" height="220"></canvas>
+<canvas id="clusterPieChart" width="400" height="220"></canvas>
+
+<section style="margin-top:20px;">
+	<h3>Daftar Berita per Cluster</h3>
+	<div>
+		<label for="cluster-select">Pilih Cluster:</label>
+		<select id="cluster-select"></select>
+	</div>
+
+	<table id="cluster-news-table" border="1" cellpadding="4" cellspacing="0" style="margin-top:10px;">
+		<thead>
+			<tr>
+				<th>Cluster</th>
+				<th>Source</th>
+				<th>Judul</th>
+				<th>Tanggal</th>
+				<th>URL</th>
+			</tr>
+		</thead>
+		<tbody></tbody>
+	</table>
+</section>
+
+<script src="/static/js/clusters.js"></script>
+{% endblock %}

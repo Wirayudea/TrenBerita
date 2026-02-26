@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Rekomendasi Judul</h2>
+
+<p>Berikut adalah hasil rekomendasi judul dari proses analisis topik.</p>
+
+<table id="recom-table" border="1" cellpadding="4" cellspacing="0">
+	<thead>
+		<tr>
+			<th>Source</th>
+			<th>Judul Asli</th>
+			<th>Rekomendasi Judul</th>
+			<th>Cluster</th>
+			<th>Tanggal</th>
+			<th>URL</th>
+		</tr>
+	</thead>
+	<tbody></tbody>
+</table>
+
+<script src="/static/js/recommendations.js"></script>
+{% endblock %}

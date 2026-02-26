@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Hasil Topik (LDA)</h2>
+
+<p>Pilih topik untuk melihat kata kunci teratas dan bobotnya.</p>
+
+<label for="topic-select">Pilih Topik:</label>
+<select id="topic-select"></select>
+
+<canvas id="topicChart" width="400" height="220"></canvas>
+
+<div id="topic-terms"></div>
+
+<script src="/static/js/topics.js"></script>
+{% endblock %}

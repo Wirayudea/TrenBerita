@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Proses Analisis</h2>
+
+<div id="analysis-message" class="message" style="display:none;"></div>
+
+<section>
+	<h3>Jalankan Analisis AI</h3>
+	<p>
+		Analisis ini akan melakukan preprocessing teks, pemodelan topik LDA, dan clustering K-Means
+		untuk semua berita yang ada di database.
+	</p>
+
+	<form id="analysis-form">
+		<label for="n-topics">Jumlah Topik (LDA):</label>
+		<input type="number" id="n-topics" name="n_topics" value="5" min="2" max="20" />
+
+		<label for="n-clusters" style="margin-left:8px;">Jumlah Cluster (K-Means):</label>
+		<input type="number" id="n-clusters" name="n_clusters" value="5" min="2" max="20" />
+
+		<button type="submit" style="margin-left:8px;">Jalankan Analisis</button>
+	</form>
+
+	<p style="margin-top:10px; font-size:13px; color:#6b7280;">
+		Endpoint yang dipanggil: <code>POST /api/analysis/run?n_topics=&lt;n&gt;&amp;n_clusters=&lt;k&gt;</code>
+	</p>
+</section>
+
+<section>
+	<h3>Ringkasan Terakhir</h3>
+	<p id="analysis-summary">Belum ada analisis yang dijalankan pada sesi ini.</p>
+</section>
+
+<script src="/static/js/analysis.js"></script>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Manajemen Berita</h2>
+
+<div id="message" class="message" style="display:none;"></div>
+
+<section>
+	<h3>Aksi Data</h3>
+	<button id="btn-scrape">Scraping Otomatis</button>
+	<button id="btn-delete-all" style="margin-left:8px; background:#b91c1c;">Hapus Semua Berita</button>
+
+	<form id="csv-form" style="margin-top:10px;">
+		<label for="csv-file">Upload CSV Berita:</label>
+		<input type="file" id="csv-file" name="file" accept=".csv" />
+		<button type="submit">Upload</button>
+		<a href="/api/news/csv-template" target="_blank">Download Template CSV</a>
+	</form>
+</section>
+
+<section style="margin-top:20px;">
+	<h3>Daftar Berita</h3>
+	<table id="news-table" border="1" cellpadding="4" cellspacing="0">
+		<thead>
+			<tr>
+				<th>Source</th>
+				<th>Judul</th>
+				<th>URL</th>
+				<th>Tanggal</th>
+				<th>Cluster</th>
+				<th>Rekomendasi Judul</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+
+	<div id="pagination" style="margin-top:10px;">
+		<button id="prev-page">Prev</button>
+		<span id="page-info">Halaman 1</span>
+		<button id="next-page">Next</button>
+	</div>
+</section>
+
+<script src="/static/js/news.js"></script>
+{% endblock %}
